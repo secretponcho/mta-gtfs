@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "rambda-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Template node.js file structure and package.json for quickstarting new projects",
   "main": "server.js",
   "scripts": {
     "build": "gulp build",
@@ -15,9 +15,6 @@
   "keywords": [],
   "author": "Anthony Re",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "homepage": "",
   "devDependencies": {
     "babel-preset-react": "^6.11.1",
