@@ -6,6 +6,8 @@ var debug = require('debug')('::http');
 const HOST = process.env.host || '0.0.0.0';
 const PORT = process.env.port || 3000;
 
+app.use(express.static('public'));
+
 app.get('/', function(req, res) {
   return res.sendFile(__dirname + '/views/index.html');
 });
