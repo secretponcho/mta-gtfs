@@ -10,7 +10,7 @@ gulp.task('scripts', function bundle() {
   var watchify = require('watchify');
   var browserify = require('browserify');
  
-  var bundleStream = watchify(browserify('./public/src/js/index.js')).bundle();
+  var bundleStream = browserify('./public/src/js/index.js').bundle();
   
   var source      = require('vinyl-source-stream'),
       streamify   = require('gulp-streamify'),
@@ -18,13 +18,14 @@ gulp.task('scripts', function bundle() {
       rename      = require('gulp-rename')
   
   bundleStream
-    .pipe(source('index.js'))
-    .pipe(streamify(uglify()))
-    .pipe(rename('bundle.js'))
+    .pipe(source('bundle.js'))
     .pipe(gulp.dest('./public/dist/js'));
-  
 });
 
-gulp.task('build', ['scripts']);
+gulp.task('watch', function() {
+  gulp.watch('./public/src/js/index.js', ['scripts']);
+});
+
+gulp.task('build', ['scripts', 'watch']);
 
 gulp.task('default', stub());
