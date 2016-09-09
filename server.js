@@ -7,7 +7,7 @@ const HOST = process.env.host || '0.0.0.0';
 const PORT = process.env.port || 3000;
 
 app.get('/', function(req, res) {
-  return res.sendFile('./views/index.html');
+  return res.sendFile(__dirname + '/views/index.html');
 });
 
 app.listen(PORT, function() {
