@@ -9,8 +9,8 @@ function stub() {
 gulp.task('scripts', function bundle() {
   var watchify = require('watchify');
   var browserify = require('browserify');
-  
-  var bundleStream = watchify(browserify('./public/src/js/index.js'));
+ 
+  var bundleStream = watchify(browserify('./public/src/js/index.js')).bundle();
   
   var source      = require('vinyl-source-stream'),
       streamify   = require('gulp-streamify'),
@@ -25,6 +25,6 @@ gulp.task('scripts', function bundle() {
   
 });
 
-gulp.task('build', stub());
+gulp.task('build', ['scripts']);
 
 gulp.task('default', stub());
