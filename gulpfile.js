@@ -6,11 +6,11 @@ function stub() {
   console.log('No task defined!');
 }
 
-gulp.task('scripts', function bundle() {
-  var browserify = require('browserify');
-  var bundleStream = browserify('./public/src/js/index.js').bundle();
-  
-  var source      = require('vinyl-source-stream');
+// TODO: modify to concatenate angular scripts or write separate task
+gulp.task('browserify', function bundle() {
+  var browserify    = require('browserify');
+  var bundleStream  = browserify('./public/src/js/index.js').bundle();
+  var source        = require('vinyl-source-stream');
   
   return bundleStream
     .pipe(source('bundle.js'))
@@ -18,10 +18,12 @@ gulp.task('scripts', function bundle() {
   
 });
 
+gulp.task('sass', stub);
+
 gulp.task('watch', function() {
   gulp.watch('./public/src/js/index.js', ['scripts']);
 });
 
-gulp.task('build', ['scripts', 'watch']);
+gulp.task('build', ['browserify', 'watch']);
 
-gulp.task('default', stub());
+gulp.task('default', stub);
