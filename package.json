@@ -4,8 +4,13 @@
   "description": "Template node.js file structure and package.json for quickstarting new projects",
   "main": "server.js",
   "scripts": {
+    "pretest": "npm install",
+    "test": "mocha; karma start",
+    
+    "prebuild": "npm install",
     "build": "gulp build",
-    "test": "mocha",
+    
+    "prestart": "npm install",
     "start": "DEBUG=::* nodemon server.js"
   },
   "repository": {
@@ -25,6 +30,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^2.0.0",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.1.1",
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2",
     "protractor": "^4.0.8",
