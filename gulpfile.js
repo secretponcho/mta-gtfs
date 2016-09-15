@@ -18,6 +18,10 @@ gulp.task('browserify', function bundle() {
   
 });
 
+gulp.task('mocha', stub);
+gulp.task('karma', stub);
+gulp.task('protractor', stub);
+
 gulp.task('sass', stub);
 
 gulp.task('watch', function() {
