@@ -1,18 +1,15 @@
 {
-  "name": "default-node",
+  "name": "mta-gtfs",
   "version": "1.0.0",
   "description": "Template node.js file structure and package.json for quickstarting new projects",
   "main": "server.js",
   "scripts": {
     "pretest": "",
     "test": "mocha ; karma start",
-    
     "preend-to-end": "webdriver-manager update",
     "end-to-end": "protractor",
-    
     "prebuild": "npm install ; npm run test ; npm run end-to-end",
     "build": "gulp build",
-    
     "prestart": "npm run test",
     "start": "DEBUG=::* nodemon server.js"
   },
