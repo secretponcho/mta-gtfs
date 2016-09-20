@@ -10,7 +10,8 @@
     "end-to-end": "protractor",
     "prebuild": "npm install ; npm run test ; npm run end-to-end",
     "build": "gulp build",
-    "prestart": "npm run test",
+    
+    "prestart": "",
     "start": "DEBUG=::* nodemon server.js"
   },
   "repository": {
